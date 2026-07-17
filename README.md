@@ -11,6 +11,8 @@ and preferences** you've shown across sessions, and writes them back into:
 
 You don't teach it your preferences. It notices them.
 
+![before and after: a plain CLAUDE.md gains an auto-distilled "My Habits" block](assets/before-after.png)
+
 ## What makes it different
 
 Most "AI memory" projects are **memory infrastructure** — SDKs + vector DBs you

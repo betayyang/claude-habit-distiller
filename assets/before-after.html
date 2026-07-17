@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --border:#30363d; --border-l:#3d444d;
+    --fg:#e6edf3; --muted:#8b949e; --comment:#6e7781;
+    --accent:#3fb950; --accent-dim:#238636; --add-bg:rgba(63,185,80,.14);
+    --add-bar:#3fb950; --path:#58a6ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+    color:var(--fg);padding:40px;width:1200px}
+  .head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  h1{font-size:26px;font-weight:700;letter-spacing:-.4px}
+  .tag{font-size:13px;color:var(--accent);border:1px solid var(--accent-dim);
+    border-radius:999px;padding:2px 12px;font-weight:600}
+  .sub{color:var(--muted);font-size:15px;margin-bottom:28px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .panel{background:var(--panel);border:1px solid var(--border);border-radius:12px;
+    overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  .bar{display:flex;align-items:center;gap:8px;padding:12px 16px;
+    border-bottom:1px solid var(--border);background:#12171e}
+  .dot{width:11px;height:11px;border-radius:50%}
+  .r{background:#ff5f56}.y{background:#ffbd2e}.g{background:#27c93f}
+  .file{margin-left:8px;color:var(--muted);font-size:13px;font-family:ui-monospace,Menlo,monospace}
+  .label{margin-left:auto;font-size:12px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.8px}
+  .label.before{color:var(--comment)}
+  .label.after{color:var(--accent)}
+  pre{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13.5px;
+    line-height:1.85;padding:20px 22px;white-space:pre-wrap;word-break:break-word;
+    min-height:430px}
+  .h{color:#ff7b72}      /* markdown heading */
+  .c{color:var(--comment)}  /* comment / sentinel */
+  .m{color:var(--muted)}    /* dash bullets */
+  .add{display:block;background:var(--add-bg);
+    box-shadow:inset 3px 0 0 var(--add-bar);padding-left:16px;margin-left:-16px}
+  .foot{margin-top:22px;color:var(--comment);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>claude-habit-distiller</h1>
+    <span class="tag">100% local</span>
+  </div>
+  <div class="sub">One scheduled run reads your own Claude Code logs and writes a habits block into <code>CLAUDE.md</code> — no server, no API.</div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="file">~/.claude/CLAUDE.md</span><span class="label before">Before</span></div>
+<pre><span class="h"># CLAUDE.md</span>
+
+<span class="h">## Project notes</span>
+
+<span class="m">-</span> Main app lives in <span class="path">apps/web</span>.
+<span class="m">-</span> Run tests with <span class="path">npm test</span>.
+
+
+
+<span class="c">// no personal preferences yet —</span>
+<span class="c">// every session starts from zero</span></pre>
+    </div>
+
+    <div class="panel">
+      <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="file">~/.claude/CLAUDE.md</span><span class="label after">After · auto-distilled</span></div>
+<pre><span class="h"># CLAUDE.md</span>
+
+<span class="h">## Project notes</span>
+
+<span class="m">-</span> Main app lives in <span class="path">apps/web</span>.
+<span class="m">-</span> Run tests with <span class="path">npm test</span>.
+<span class="add"> </span><span class="add"><span class="c">&lt;!-- BEGIN habit-distiller (auto-managed) --&gt;</span></span><span class="add"><span class="h">## My Habits</span> <span class="c">(auto-distilled · 2026-07-17)</span></span><span class="add"> </span><span class="add"><span class="m">-</span> Reply in English; be concise, lead with the conclusion.</span><span class="add"><span class="m">-</span> Show the plan &amp; scope before changing code; wait for go-ahead.</span><span class="add"><span class="m">-</span> Keep changes minimal and focused; no unrelated refactors.</span><span class="add"><span class="m">-</span> Default to Python for one-off scripts and CLIs.</span><span class="add"><span class="c">&lt;!-- END habit-distiller --&gt;</span></span></pre>
+    </div>
+  </div>
+
+  <div class="foot">Distilled from 2 sessions · 4 stable habits (seen ≥2×) · 1 single-occurrence signal held back · also written as per-habit memory files with the <em>why</em></div>
+</body>
+</html>
