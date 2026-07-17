@@ -46,7 +46,7 @@ See [`docs/how-it-works.md`](docs/how-it-works.md) for the full design and
 ## Install (30 seconds)
 
 ```bash
-git clone https://github.com/<you>/claude-habit-distiller.git
+git clone https://github.com/betayyang/claude-habit-distiller.git
 cd claude-habit-distiller
 cp config.example.toml ~/.config/claude-habit-distiller/config.toml   # optional; edit to taste
 ./install/install.sh                 # links the skill + schedules a daily run
