@@ -1,0 +1,31 @@
+# claude-habit-distiller configuration
+# Copy this file to one of:
+#   ~/.config/claude-habit-distiller/config.toml   (preferred)
+#   ./config.toml                                    (next to the skill)
+# All keys are optional; the values below are the built-in defaults.
+
+# Language for distilled habits and the run summary. e.g. "en", "zh".
+language = "en"
+
+# Look-back window (days) used only when .last-run does not exist yet.
+window_days = 7
+
+# How many times a signal must appear before it counts as a stable habit.
+# Raise this to be stricter and store fewer, higher-confidence habits.
+min_occurrences = 2
+
+# Maximum number of lines kept in the CLAUDE.md "My Habits" block.
+max_habits = 16
+
+# Whether to maintain the sentinel-managed habits block in the global CLAUDE.md.
+# Set to false if you only want the detailed per-habit memory files.
+write_global_claude_md = true
+
+# Project directory names to skip entirely (as they appear under ~/.claude/projects/).
+# Useful for excluding sensitive or noisy repos.
+exclude_projects = []
+
+# Where per-habit memory files live.
+#   "auto" = detect the home-project memory dir automatically
+#   or set an absolute path, e.g. "/Users/alice/.claude/memory"
+memory_dir = "auto"

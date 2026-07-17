@@ -1,0 +1,5 @@
+# local runtime artifacts (never commit real user data)
+config.toml
+skills/distill-habits/.last-run
+skills/distill-habits/.last-summary.txt
+skills/distill-habits/*.log

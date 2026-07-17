@@ -1,0 +1,9 @@
+# CLAUDE.md
+
+<!-- A fresh CLAUDE.md, before claude-habit-distiller has run.
+     The user has not written any personal preferences yet. -->
+
+## Project notes
+
+- Main app lives in `apps/web`.
+- Run tests with `npm test`.

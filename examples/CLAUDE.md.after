@@ -1,0 +1,21 @@
+# CLAUDE.md
+
+## Project notes
+
+- Main app lives in `apps/web`.
+- Run tests with `npm test`.
+
+<!-- BEGIN habit-distiller (auto-managed · do not edit this block by hand) -->
+## My Habits (auto-distilled · last updated 2026-02-14)
+
+- Reply in English; be concise and lead with the conclusion.
+- Before changing code, propose the plan and scope first; wait for approval to proceed.
+- Keep changes minimal and focused; don't refactor unrelated code opportunistically.
+- Verify claims against the real code before concluding; cite `file:line`, and say so when unsure.
+- Default to Python for one-off scripts and CLIs.
+- Prefer plugin/injectable designs: decouple strategy from core, sensible defaults, config over code changes.
+- When fixing bugs, narrow the blast radius — avoid touching shared helpers used by every caller.
+- For large changes, favor phased delivery: ship a minimal/shadow version first, then scale up.
+- Reuse existing patterns in the repo (naming, layering, style) instead of inventing a new one.
+- Surface any newly added functions that end up uncalled; flag real dead code for removal.
+<!-- END habit-distiller -->
