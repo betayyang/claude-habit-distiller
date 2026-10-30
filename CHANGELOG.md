@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+- A failed run left its error only in `last-summary.txt` / `last-exec.log`, which the
+  next run overwrites. The report and the tail of `last-exec.log` are now appended
+  to `run.log` when the agent exits non-zero.
+
 ## v0.2.0 — 2026-10-19
 
 Renamed from `claude-habit-distiller` to `agent-habit-distiller`. The old GitHub URL

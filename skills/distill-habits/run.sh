@@ -160,6 +160,12 @@ else
 fi
 set -e
 
+# Both output files are overwritten by the next run, so keep why this one failed.
+if [[ $EXIT -ne 0 ]]; then
+  { echo "agent failed (exit=$EXIT); report:"; cat "$OUT"
+    echo "--- last 20 lines of last-exec.log:"; tail -n 20 "$EXEC_LOG"; } >>"$LOG"
+fi
+
 AFTER=$(block_chars)
 DELTA=$((AFTER - BEFORE))
 GROWTH=""
